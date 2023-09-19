@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matricula de Cursos</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Formulario de Matrícula de Cursos</h1>
+        <div class="row justify-content-center">
+            <form action="/confirmacion" method="post">
+                <div class="col-md-6">
+                    <!--Paso 1-->
+                    <div id="paso1">
+                        <h2>Seleccion de Curso</h2>
+                        <div class="form-group">
+                            <label for="curso">Seleciona un curso:</label>
+                            <select class="form-control" name="curso" id="curso" required>
+                                <option value="">Seleccionar</option>
+                                <option value="java">Java</option>
+                                <option value="php">PHP</option>
+                                <option value="dotnet">.Net</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn" id="siguientePaso1">Siguiente</button>
+                    </div>
+
+                    <!--Paso 2-->
+                    <div id="paso2" style="display: none;">
+                        <h2>Seleccion de Modulos</h2>
+                        <div class="form-group">
+                            <label>Slecciona los modulos</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Basico" id="modulos"
+                                    name="modulos">
+                                <label class="form-check-label">Basico</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Intermedio" name="modulos"
+                                    id="modulos">
+                                <label class="form-check-label">Intermedio</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Avanzado" name="modulos"
+                                    id="modulos">
+                                <label class="form-check-label">Avanzado</label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn" id="siguientePaso2">Siguiente</button>
+                        <button type="button" class="btn-danger" id="retornarPas1">Regresar</button>
+                    </div>
+
+                    <!--Paso 3-->
+                    <div id="paso3" style="display: none;">
+                        <h2>Metodo de Pago</h2>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pago" id="pago"
+                                    value="Tarjeta de Credito" required>
+                                <label class="form-check-label" for="pago">Tarjeta de Credito</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pago" id="pago" value="Efectivo"
+                                    required>
+                                <label class="form-check-label" for="pago">Efectivo</label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn" id="siguientePaso3">Siguiente</button>
+                        <button type="button" class="btn-danger" id="retornarPas2">Regresar</button>
+                    </div>
+
+                    <div id="resultado" style="display: none;">
+                        <h2>Detalle de la Matricula</h2>
+                        <p>Curso: <span id="cursoSeleccionado"></span></p>
+                        <p>Modulo: <span id="moduloSeleccionado"></span></p>
+                        <p>Metodo de Pago: <span id="metodoPago"></span></p>
+                        <p>Total a Pagar: <span id="totalPagar"></span></p>
+                        <button class="btn-success" type="submit">Confirmar Matricula</button>
+                        <button type="button" class="btn-danger" id="retornarPas3">Regresar</button>
+                    </div>
+                    <input type="hidden" id="cursoSelect" name="cursoSelect">
+                    <input type="hidden" id="modulosSelect" name="modulosSelect">
+                    <input type="hidden" id="pagoSelect" name="pagoSelect">
+                    <input type="hidden" id="tPago" name="tPago">
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

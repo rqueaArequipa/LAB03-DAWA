@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Matrícula</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="confirmacion-container">
+        <h2>Felicitaciones, te has matriculado con éxito</h2>
+        
+        <div class="detalle-matricula">
+            <p>Curso: <span id="cursoSeleccionado"><%= curso %></span></p>
+            <p>Módulos: <span id="modulosSeleccionados"><%= modulos %></span></p>
+            <p>Método de Pago: <span id="metodoPago"><%= metodoPago %></span></p>
+            <p>Total a Pagar: <span id="totalPagar">S/.<%= totalPago %></span></p>
+        </div>
+        <button id="regresar">Regresar</button>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
